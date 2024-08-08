@@ -11,13 +11,12 @@ app.get('/', (req, res) => {
     //Run the system 'fortune' command and respond with the msg
     child_process.exec('fortune',(error, message) => {
         if(error == null) {
-            res.send(message);
+            res.send(message + Date());
         } else {
             res.send('Error:' + error);
         }
 
     })
-    res.send('Hello World!');
 }); 
 // Start listening for HTTP requests on port 3000 
 app.listen(3000, () => { 
