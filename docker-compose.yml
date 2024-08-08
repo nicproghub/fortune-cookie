@@ -8,3 +8,5 @@
                 - "3000:3000" 
             volumes: 
                 - ".:/app" 
+                # default time based on alpine, change to host local time
+                - "/etc/localtime:/etc/localtime:ro"
