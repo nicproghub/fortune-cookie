@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     //Run the system 'fortune' command and respond with the msg
     child_process.exec('fortune',(error, message) => {
         if(error == null) {
-            res.send(message + Date());
+            res.send(message + 'Today is ' + Date());
         } else {
             res.send('Error:' + error);
         }
